@@ -1,0 +1,21 @@
+<h2>My Heroes</h2>
+<ul>
+  <li *ngFor="let hero of heroes">
+    <span>{{hero.id}}</span>
+    <span>{{hero.name}}</span>
+  </li>
+</ul>
+
+<nz-list [nzDataSource]="heroes" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+  <ng-template #item let-item>
+    <nz-list-item>
+      <nz-list-item-meta
+        [nzTitle]="nzTitle">
+        <ng-template #nzTitle>
+          <span>{{item.id}}</span>
+          <span>{{item.name}}</span>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>

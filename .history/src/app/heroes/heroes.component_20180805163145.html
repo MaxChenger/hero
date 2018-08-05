@@ -1,0 +1,26 @@
+<div class="heroes" *ngIf="!selectedHero">
+  <nz-list [nzDataSource]="heroes" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+    <ng-template #item let-item>
+      <nz-list-item>
+        <nz-list-item-meta
+          [nzTitle]="nzTitle">
+          <ng-template #nzTitle>
+            <span class="heroId">{{item.id}}</span>
+            <span (click)="pickHero(item)">{{item.name}}</span>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>
+
+<div class="hero-detail" *ngIf="selectedHero">
+  <h2>{{selectedHero.name}}</h2>
+  <div>
+    <span>id:</span>{{selectedHero.id}}
+  </div>
+  <div>
+    <label>name:</label>
+    <input [(ngModel)]="selectedHero.name" placeholder="name">
+  </div>
+</div>

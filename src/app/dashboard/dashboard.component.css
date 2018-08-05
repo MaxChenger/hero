@@ -1,0 +1,13 @@
+.info-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-wrap a {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}

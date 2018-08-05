@@ -1,0 +1,17 @@
+<div class="heroes">
+  <nz-list [nzDataSource]="heroes" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+    <ng-template #item let-item>
+      <nz-list-item>
+        <nz-list-item-meta
+          [nzTitle]="nzTitle">
+          <ng-template #nzTitle>
+            <a routerLink="/detail/{{item.id}}">
+              <span class="heroId">{{item.id}}</span>
+              <span>{{item.name}}</span>
+            </a>         
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </nz-list>
+</div>
